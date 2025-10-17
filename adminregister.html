@@ -1,0 +1,44 @@
+
+<form #userData="ngForm" (ngSubmit)="register(userData)" novalidate>
+    <h2>Registration Form</h2>
+
+    <label>Username:</label>
+    <input type="text" name="userName" ngModel #userName="ngModel" placeholder="Username" required minlength="2">
+    <div *ngIf="userName.invalid && userName.touched" class="error">
+        Username is required (min 2 characters).
+    </div>
+
+    <label>Email:</label>
+    <input type="email" name="email" ngModel #email="ngModel" placeholder="Email" required>
+    <div *ngIf="email.invalid && email.touched" class="error">
+        Valid email is required.
+    </div>
+
+    <label>Password:</label>
+    <input type="password" name="password" ngModel #password="ngModel" placeholder="Enter password" required minlength="8">
+    <div *ngIf="password.invalid && password.touched" class="error">
+        Password must be at least 8 characters.
+    </div>
+
+    <label>Mobile Number:</label>
+    <input type="tel" name="mobile" ngModel #mobile="ngModel" placeholder="Mobile Number" required pattern="[0-9]{10}">
+    <div *ngIf="mobile.invalid && mobile.touched" class="error">
+        Enter a valid 10-digit mobile number.
+    </div>
+
+    <label>Address:</label>
+    <textarea name="address" ngModel #address="ngModel" placeholder="Address" required></textarea>
+    <div *ngIf="address.invalid && address.touched" class="error">
+        Address is required.
+    </div>
+
+    <button type="submit" [disabled]="!userData.form.valid">Register</button>
+    <!-- <button type="reset">Reset</button> -->
+     <button type="button" class="google-btn" (click)="loginWithGoogle()">Continue with Google</button>
+
+    <p class="login-link">
+        Already have an account? <a routerLink="/login">Login</a>
+    </p>
+</form>
+
+

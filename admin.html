@@ -1,0 +1,102 @@
+<!-- <div class="container mt-4">
+  <h2 class="text-center mb-3">Admin Dashboard</h2>
+
+  <form (ngSubmit)="addProduct()" #productForm="ngForm" class="p-3 border rounded bg-light shadow-sm">
+    <input type="text" class="form-control mb-2" placeholder="Name" [(ngModel)]="product.name" name="name" required />
+    <input type="text" class="form-control mb-2" placeholder="Description" [(ngModel)]="product.description" name="description" required />
+    <input type="number" class="form-control mb-2" placeholder="Price" [(ngModel)]="product.price" name="price" required />
+    <input type="text" class="form-control mb-3" placeholder="Image URL" [(ngModel)]="product.image" name="image" required />
+    <button type="submit" class="btn btn-primary w-100">Add Product</button>
+  </form>
+</div> -->
+
+
+<div class="admin-container">
+  <h2>Admin Dashboard</h2>
+  <!-- <div *ngIf="message" class="success-message">{{ message }}</div> -->
+
+
+  <!-- Add / Edit Product Form -->
+  <!-- <form (ngSubmit)="editMode ? updateProduct() : addProduct()" #productForm="ngForm" class="admin-form"> -->
+    <form (ngSubmit)="onSubmit()" #productForm="ngForm" class="admin-form">
+
+    <label>
+      Product Name:
+      <input type="text" placeholder="Enter product name" [(ngModel)]="product.name" name="name" required />
+    </label>
+
+    <label>
+      Description:
+      <input type="text" placeholder="Enter description" [(ngModel)]="product.description" name="description" required />
+    </label>
+
+    <label>
+      Price:
+      <input type="number" placeholder="Enter price" [(ngModel)]="product.price" name="price" required />
+    </label>
+
+    <label>
+      Quantity:
+      <input type="number" placeholder="Enter quantity" [(ngModel)]="product.quantity" name="quantity" required />
+    </label>
+
+    <!-- <label>
+      Image URL:
+      <input type="text" placeholder="Enter image URL" [(ngModel)]="product.image" name="image" required />
+    </label> -->
+    <label>
+  Select Image:
+  <input type="file" (change)="onFileSelected($event)" required />
+</label>
+
+
+    <button type="submit" class="btn">{{ editMode ? "Update Product" : "Add Product" }}</button>
+    <button type="button" class="btn reset-btn" (click)="resetForm()">Reset</button>
+
+    
+
+  </form>
+
+  <!-- Search Products -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search products..." [(ngModel)]="searchText" />
+  </div>
+
+  <!-- Product List -->
+  <div class="product-list">
+    <h3>Products</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Image</th>
+          <th>Visible</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of filteredProducts">
+          <td>{{ p.name }}</td>
+          <td>{{ p.description }}</td>
+          <td>₹{{ p.price }}</td>
+          <td>{{ p.quantity }}</td>
+          <td><img [src]="p.image" alt="{{ p.name }}" class="product-img" /></td>
+          <td>{{ p.visible ? "Yes" : "No" }}</td>
+          <td>
+            <button (click)="editProduct(p)">Edit</button>
+            <button (click)="toggleVisibility(p.id)">
+              {{ p.visible ? "Hide" : "Show" }}
+
+              <!-- <div *ngIf="message" class="message">
+  {{ message }}
+</div> -->
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

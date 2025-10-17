@@ -1,0 +1,135 @@
+<!-- Navbar -->
+<!-- <header class="sticky-top shadow-sm">
+  <nav class="navbar navbar-expand-md navbar-dark bg-navy py-3">
+    <div class="container-xl">
+      <a class="navbar-brand fw-bold text-yellow" routerLink="/">📚 StationeryShop</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" routerLink="#homepage">Home</a></li>
+          <li class="nav-item"><a routerLink="/" fragment="about" class="nav-link">About</a>
+          <li class="nav-item"><a class="nav-link" routerLink="/products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/contact">Cart</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header> -->
+
+<!-- Navbar -->
+<header class="sticky-top shadow-sm" *ngIf="true">
+  <nav class="navbar navbar-expand-md navbar-dark bg-navy py-3">
+    <div class="container-xl">
+      <a class="navbar-brand fw-bold text-yellow" routerLink="/">
+        📚Inkspire
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" fragment="homepage">
+              <i class="bi bi-house-door-fill"></i> Home
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" fragment="about">
+              <i class="bi bi-info-circle-fill"></i> About
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/products">
+              <i class="bi bi-bag-fill"></i> Products
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contactus">
+              <i class="bi bi-envelope-fill"></i> Contact
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart">
+              <i class="bi bi-cart-fill"></i> Cart
+            </a>
+          </li>
+
+          <!-- ✅ Logout / Login Toggle -->
+<li class="nav-item" *ngIf="isLoggedIn">
+  <a class="nav-link" (click)="logout()">
+    <i class="bi bi-box-arrow-right"></i> Logout
+  </a>
+</li>
+
+<li class="nav-item" *ngIf="!isLoggedIn">
+  <a class="nav-link" routerLink="/select-user-type">
+    <i class="bi bi-person-circle"></i> SignUp
+  </a>
+</li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content text-center">
+    <h1 class="hero-title">Unleash Creativity with Quality Stationery</h1>
+    <p class="hero-subtitle">Pens, papers & essentials for every idea. Start creating today!</p>
+    <a href="/products" class="btn btn-yellow btn-lg rounded-pill">Shop Now</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section py-5">
+  <div class="container-xl">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img src="slider1.jpg" alt="About Stationery" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h2 class="about-title">About Us</h2>
+        <p class="about-text">
+          At <span class="text-indigo">StationeryShop</span>, we believe the right tools spark creativity.  
+          From premium pens to notebooks and office supplies, we provide quality stationery to support your journey of learning, working, and creating.
+        </p>
+        <p class="about-text">
+          Our mission is simple: <span class="fw-semibold text-yellow">to make writing and creativity joyful again.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-center py-3">
+  <p>&copy; 2025 StationeryShop. All rights reserved.</p>
+</footer>

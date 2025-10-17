@@ -1,0 +1,77 @@
+<!-- <p>cart works!</p> -->
+
+<!-- Navbar -->
+<header class="sticky-top shadow-sm">
+  <nav class="navbar navbar-expand-md navbar-dark bg-navy py-3">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-yellow" routerLink="/">📚Inkspire</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/" fragment="about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="/login">Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="container py-5">
+  <h2 class="text-center mb-4">🛒 Your Cart</h2>
+
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Price (₹)</th>
+            <th>Quantity</th>
+            <th>Subtotal (₹)</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems; let i = index">
+            <td><img [src]="item.image" class="cart-img" alt="{{item.name}}"></td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>
+              <button class="btn btn-sm btn-secondary me-2" (click)="decreaseQuantity(item)">-</button>
+              {{item.quantity}}
+              <button class="btn btn-sm btn-secondary ms-2" (click)="increaseQuantity(item)">+</button>
+            </td>
+            <td>{{item.price * item.quantity}}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="removeItem(i)">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-end mt-3">
+      <h4>Total: ₹ {{ total }}</h4>
+      <button class="btn btn-success mt-2">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <ng-template #emptyCart>
+    <div class="text-center mt-5">
+      <h4>Your cart is empty 🛍️</h4>
+      <a routerLink="/products" class="btn btn-primary mt-3">Shop Now</a>
+    </div>
+  </ng-template>
+</div>
+<!-- Footer -->
+<footer class="footer text-center py-3">
+  <p>&copy; 2025 StationeryShop. All rights reserved.</p>
+</footer>
+
