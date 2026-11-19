@@ -1,0 +1,71 @@
+<!-- Navbar -->
+<header class="sticky-top shadow-sm">
+  <nav class="navbar navbar-expand-md navbar-dark bg-navy py-3">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-yellow" routerLink="/">📚Inkspire</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/homepage">Home</a></li>
+          <li class="nav-item"><a class="nav-link"  href="/homepage" fragment="about">About</a></li>
+          <li class="nav-item"><a class="nav-link"  href="/products">Products</a></li>
+          <li class="nav-item"><a class="nav-link"  href="/contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link"  href="/cart">Cart</a></li>
+          <li class="nav-item"><a class="nav-link"  href="/login">SignUp</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero -->
+<div class="text-center my-4">
+  <h2>Stationery Store</h2>
+  <p>The Best of Stationery — Order the best stationery from global brands</p>
+
+
+<!-- Products Grid -->
+<div class="container-fluid py-5">
+  <h2 class="text-center mb-4">Our Products</h2>
+
+  <!-- Search
+  <div class="mb-4 text-center">
+    <input type="text" class="form-control w-50 mx-auto"
+           placeholder="Search products..."
+           [(ngModel)]="searchText">
+  </div> -->
+
+  <div class="mb-4 text-center">
+  <div class="search-bar">
+    <span class="search-icon">🔍</span>
+    <input type="text" placeholder="Search products..." [(ngModel)]="searchText">
+    <button class="clear-btn" (click)="searchText=''">✖</button>
+  </div>
+</div>
+
+
+  <!-- Responsive Cards -->
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+    <div class="col" *ngFor="let product of filteredProducts">
+      <div class="card h-100">
+        <!-- <img [src]="product.image" class="card-img-top" alt="{{product.name}}"> -->
+         <img [src]="'assets/icons/' + product.image" alt="{{ product.name }}" class="card-img-top">
+
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <p class="fw-bold">₹{{product.price}}</p>
+          <button class="btn btn-primary w-100" (click)="addToCart(product)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer text-center py-3">
+  <p>&copy; 2025 StationeryShop. All rights reserved.</p>
+</footer>

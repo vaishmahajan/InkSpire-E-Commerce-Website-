@@ -1,0 +1,105 @@
+<!-- Navbar -->
+<header class="sticky-top shadow-sm">
+  <nav class="navbar navbar-expand-md navbar-dark bg-navy py-3">
+    <div class="container-xl">
+      <a class="navbar-brand fw-bold text-yellow" routerLink="/">
+        📚Inkspire
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" fragment="homepage">
+              <i class="bi bi-house-door-fill"></i> Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" fragment="about">
+              <i class="bi bi-info-circle-fill"></i> About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/products">
+              <i class="bi bi-bag-fill"></i> Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact">
+              <i class="bi bi-envelope-fill"></i> Contact
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart">
+              <i class="bi bi-cart-fill"></i> Cart
+            </a>
+          </li>
+
+          <!-- Profile/Login -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="#login">
+              <i class="bi bi-person-circle"></i> Profile
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Contact Us Section -->
+<section class="contact-section py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">We’d love to hear from you! Please fill out the form below.</p>
+    </div>
+
+    <div class="row">
+      <!-- Contact Form -->
+      <div class="col-md-6">
+        <form class="contact-form" (ngSubmit)="submitContact()" #contactForm="ngForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name *</label>
+            <input type="text" id="name" class="form-control" required [(ngModel)]="contact.name" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email *</label>
+            <input type="email" id="email" class="form-control" required [(ngModel)]="contact.email" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="contactNo" class="form-label">Contact Number *</label>
+            <input type="text" id="contactNo" class="form-control" required [(ngModel)]="contact.contactNo" name="contactNo">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message *</label>
+            <textarea id="message" rows="5" class="form-control" required [(ngModel)]="contact.message" name="message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-yellow">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-6 contact-info">
+        <h4>Our Contact Information</h4>
+        <p><strong>Address:</strong> 123 Stationery Street, Creativity City, India</p>
+        <p><strong>Email:</strong> support@stationeryshop.com</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Working Hours:</strong> Mon - Sat, 9:00 AM - 6:00 PM</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+<footer class="footer text-center py-3">
+  <p>&copy; 2025 StationeryShop. All rights reserved.</p>
+</footer>
