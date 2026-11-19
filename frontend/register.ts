@@ -1,0 +1,46 @@
+import { Component, Injectable } from '@angular/core';
+import { CommonModule } from '@angular/common'; // <-- ADD THIS
+import { FormsModule} from '@angular/forms';
+import { User } from '../service/user';
+import { Router, RouterModule } from '@angular/router';
+
+@Component({
+  selector: 'app-register',
+  standalone: true,  
+  imports: [FormsModule, CommonModule, RouterModule], // <-- ADD CommonModule
+  templateUrl: './register.html',
+  styleUrls: ['./register.css']
+})
+
+@Injectable({providedIn: 'root'})
+
+export class Register {
+
+  constructor(private user: User, private route: Router){ }
+
+  register(userData: any) {
+    console.log(userData.value);
+    this.user.addUser(userData.value).subscribe(
+    (resp)=>{
+      console.log(resp);
+      alert("Data Added successfully");
+      this.route.navigate(['/']);
+    },
+    (err)=>{
+      console.log(err);
+    }
+    );
+
+    
+    
+  }
+
+  // ← Add this method here
+  loginWithGoogle() {
+    console.log("Google login clicked");
+    alert("Google login clicked — functionality not implemented yet.");
+    // Later: add Google OAuth logic here
+  }
+
+
+}

@@ -1,0 +1,92 @@
+:host {
+    display: block;
+    height: 100vh;
+    background: linear-gradient(rgba(10, 31, 68, 0.6), rgba(10, 31, 68, 0.6)),
+                url('/register.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+
+form {
+    background: rgba(21, 13, 47, 0.8); /* navy-like color with transparency */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: auto;
+}
+
+
+h2 {
+    text-align: center;
+    color: #dfdf24; /* Navy blue heading */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #dfdf24; /* Navy text */
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.error {
+    color: #ff0000; /* Yellow error text */
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+button {
+    background: linear-gradient(135deg, #0a1f44, #ffcc00); /* Navy to yellow gradient */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    font-weight: bold;
+}
+
+button:hover:enabled {
+    background: linear-gradient(135deg, #081737, #e6b800);
+}
+
+button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    input, select, textarea, button {
+        padding: 8px;
+    }
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ffffff; /* White text */
+}
+
+.login-link a {
+    color: #ffcc00; /* Yellow link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

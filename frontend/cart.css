@@ -1,0 +1,47 @@
+:root {
+  --navy-blue: #0a1f44; /* Navbar & footer background */
+  --yellow: #ffcc00;     /* Highlight & buttons */
+  --indigo: #0f0d2f;     /* About section text highlight */
+}
+
+/* ===== NAVBAR ===== */
+.bg-navy {
+  background-color: var(--navy-blue);
+}
+
+.navbar .nav-link {
+  color: rgb(252, 251, 251) !important;
+}
+
+.navbar .nav-link:hover {
+  color: var(--yellow) !important;
+}
+
+.navbar-brand {
+  color: var(--yellow);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: var(--navy-blue);
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+
+.cart-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+table {
+  background: #020847;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+h4 {
+  font-weight: 600;
+}

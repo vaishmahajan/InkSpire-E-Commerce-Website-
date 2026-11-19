@@ -1,0 +1,218 @@
+/* body {
+  background: linear-gradient(rgba(10, 31, 68, 0.6), rgba(10, 31, 68, 0.6)),
+              url('/login-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+form {
+  background: rgba(21, 13, 47, 0.8);
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 60px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+h2 {
+  text-align: center;
+  color: #ffcc00;
+}
+
+label {
+  display: block;
+  margin: 8px 0 4px;
+  color: #ffcc00;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background: linear-gradient(135deg, #0a1f44, #ffcc00);
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(135deg, #081737, #e6b800);
+}
+
+.google-btn {
+  background: #db4437;
+  margin-top: 10px;
+}
+
+.google-btn:hover {
+  background: #c1351d;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 15px;
+  color: #11c4df;
+} */
+
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background: url('/slider2.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.login-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% transparency */
+  z-index: 0;
+}
+
+.login-box {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 900px;
+  background: rgba(21, 13, 47, 0.8);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-image {
+  flex: 1;
+  overflow: hidden;
+}
+
+.login-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-form {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Added gap for spacing between form elements */
+}
+
+.login-form h2 {
+  color: #dfdf24;
+  margin-bottom: 30px;
+  text-align: center;
+  text-align: center;
+}
+
+.login-form label {
+  color: #dfdf24;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px; /* Reduced space between inputs */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form button {
+  width: 100%; /* Make all inputs/buttons full width */
+  box-sizing: border-box; /* Fix padding width issues */
+  margin-top: 15px; /* <-- Added space between password field and button */
+  
+  
+}
+
+.login-form input {
+  padding: 12px;
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #d79c08;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-form input,
+.login-form button,
+.google-btn {
+  width: 100%;
+  box-sizing: border-box; /* ensures padding is included in width */
+}
+
+.login-form input {
+  padding: 12px;
+  font-size: 14px;
+}
+
+.login-form button,
+.google-btn {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.login-form button:disabled {
+  background: #d79c08;
+  cursor: not-allowed;
+}
+
+.google-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background: #de5246;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.register-link {
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+}

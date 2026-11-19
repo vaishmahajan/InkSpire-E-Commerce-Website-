@@ -1,0 +1,73 @@
+<!-- <p>login works!</p>
+<form (ngSubmit)="login()" #loginForm="ngForm" novalidate>
+  <h2>Login</h2>
+
+  <label>Email:</label>
+  <input type="email" [(ngModel)]="email" name="email" required placeholder="Enter your email">
+  <div *ngIf="!email && loginForm.submitted" class="error">Email is required</div>
+
+  <label>Password:</label>
+  <input type="password" [(ngModel)]="password" name="password" required placeholder="Enter your password">
+  <div *ngIf="!password && loginForm.submitted" class="error">Password is required</div>
+
+  <button type="submit">Login</button>
+  <button type="button" class="google-btn" (click)="loginWithGoogle()">Continue with Google</button>
+
+  <p class="register-link">
+    Don’t have an account? <a routerLink="/register">Register</a>
+  </p>
+</form> -->
+
+
+<div class="login-wrapper">
+  <div class="login-box">
+
+    <!-- Left side image -->
+    <div class="login-image">
+      <img src="/slider1.jpg" alt="Login Image" />
+    </div>
+
+    <!-- Right side form -->
+    <div class="login-form">
+      <h2>Customer Login</h2>
+
+      <form #loginForm="ngForm" (ngSubmit)="login()" novalidate>
+        <label>Email:</label>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="Enter your email"
+          required
+          email
+        />
+        <div *ngIf="loginForm.controls['email']?.invalid && (loginForm.controls['email']?.touched || loginForm.controls['email']?.dirty)" class="error">
+          <small *ngIf="loginForm.controls['email']?.errors?.['required']">Email is required.</small>
+          <small *ngIf="loginForm.controls['email']?.errors?.['email']">Enter a valid email.</small>
+        </div>
+
+        <label>Password:</label>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Enter your password"
+          required
+          minlength="6"
+        />
+        <div *ngIf="loginForm.controls['password']?.invalid && (loginForm.controls['password']?.touched || loginForm.controls['password']?.dirty)" class="error">
+          <small *ngIf="loginForm.controls['password']?.errors?.['required']">Password is required.</small>
+          <small *ngIf="loginForm.controls['password']?.errors?.['minlength']">Minimum 6 characters required.</small>
+        </div>
+
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        <button type="button" class="google-btn" (click)="loginWithGoogle()">Continue with Google</button>
+
+        <p class="register-link">
+          Don't have an account? <a routerLink="/register">Register</a>
+        </p>
+      </form>
+    </div>
+
+  </div>
+</div>
